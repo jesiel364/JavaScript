@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Expressões Regulares</title>
+	<style type="text/css">
+		body{
+			background-color: #3900B7;
+			color: antiquewhite;
+			font: normal 20pt Arial;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Expressões Regulares</h1>
+	<h2>Quantidade de caracteres na expressão</h2>
+	<p id="qt">Qtd</p>
+
+	<script>
+ function stringSearch() {
+   var str = "Expressões regulares em JavaScript na DevMedia!";
+   var n = str.search(/[j+]/i);
+   document.getElementById('qt').innerHTML = n
+  }
+  stringSearch()
+</script>
+
+</body>
+</html>
