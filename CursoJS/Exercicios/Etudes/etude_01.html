@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Netflix</title>
+	<style type="text/css">
+		body{
+
+			background-image: url("bg.jpg");
+			background-color: #000000;
+			color: #564d4d;
+
+			font: normal 20pt Arial;
+			min-height: 550px;
+
+		}
+		h1{
+			color: #db0000;
+			text-align: center;
+
+		}
+		h2{
+			text-align: left;
+
+			padding: 1x;
+			color: #ffffff;
+
+
+		}
+
+		input{
+			background-color: #564d4d;
+			border-radius: 5px;
+			border-width: 0px;
+			color: #ffffff;
+			font:  15pt Arial;
+			height: 3em;
+			width: 16em;
+			padding: 0px;
+
+
+
+
+		}
+
+		button{
+			background: #1486cf;
+	    border: none;
+	    border-radius: 4px;
+	    color: #fff;
+	    font-weight: bold;
+	    padding: 12px 20px;
+
+	    &[type="reset"] {
+	      background: #fff;
+	      border: 1px solid #ddd;
+	      color: #454545;
+
+
+	}
+
+		div{
+			margin: auto;
+			display: block;
+			align-self: center;
+			background-color: rgba(0, 0, 0, .8);
+			width: 320px;
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		#main{
+			display: all;
+			color: rgba(0, 0, 0, .8);
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<script type="text/javascript">
+		function teste(){
+			var lg = document.getElementById('logo')
+			lg.innerHTML = 'Deu certo!'
+		}
+	</script>
+</head>
+<body>
+	<div id="main">
+	<h1 id="logo">Netflix</h1>
+
+	<div id="form">
+	<h2>Entrar</h2>
+
+	<input formcontrolname='dealership' id="field" type="text" placeholder="Email ou número de telefone"></input><br>
+	<br>
+
+	<input id="field2" type="text"  placeholder="Senha"></input><br>
+	<br>
+	<br>
+
+	<button onclick="teste();">Entrar</button><br>
+</div>
+</div>
+
+</body>
+</html>

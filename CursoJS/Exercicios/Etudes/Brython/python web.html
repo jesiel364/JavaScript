@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
+</script>
+<style type="text/css">
+    body{
+        font: normal 20pt Consolas;
+        text-align: center;
+    }
+</style>
+    </head>
+    <body onload="brython()">
+        <script type="text/python">
+            from browser import document
+            from browser.html import H1, P, BUTTON, INPUT
+
+            h1 = 'Esse é um texto em Python'
+            document <= H1(h1)
+
+            input = INPUT(id='nome')
+            document <= input
+
+
+            def mostrar():
+                h1 = 's'
+                document <= H1(h1)
+
+            bt = BUTTON('Okay', id='a', onclick= 'mostrar()')
+            document <= bt
+
+            
+
+
+        
+        </script>
+
+    </body>
+</html>

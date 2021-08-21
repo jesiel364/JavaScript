@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>FileAPI HTML5</title>
+    <style type="text/css">
+        body{
+            background-color: #000000;
+            font-family: Arial;
+            color: antiquewhite;
+
+            
+        }
+        #filecontents {
+
+            /*display: block;*/
+            margin: auto;
+            align-items: center;
+            max-height: 300px;
+            max-width: 600px;
+            color: antiquewhite;
+            background-color: #707070;
+
+            border: None;
+            border-width: 2px;
+            border-color: blue;
+            border-radius: 4px;
+            overflow-y: scroll;
+            height: 400px;
+
+        }
+
+        #label{
+            text-align: center;
+            background-color: #707070;
+            border-radius: 4px;
+            max-width: 600px;
+            margin: auto;
+            max-height: 100px;
+        }
+
+        #e2{
+            margin: auto;
+            max-width: 600px;
+            max-height: 100px;
+        }
+
+        #txtfiletoread{
+            border-radius: 100px;
+            background-color: #3E3D3D;
+            border:  none;
+        }
+    </style>
+</head>
+<body>
+    <div id="label">
+    <h3>Por favor selecione arquivo que será lido:</h3>
+    <input type="file" id="txtfiletoread" /><br />
+    </div>
+    <div id="e2"><h4>Conteúdo do arquivo:</h4></div>
+    <div id="filecontents">
+        
+    </div>
+
+    <script>
+
+        window.onload = function () {
+            //Check the support for the File API support
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var fileSelected = document.getElementById('txtfiletoread');
+                fileSelected.addEventListener('change', function (e) {
+                    //Set the extension for the file
+                    var fileExtension = /text.*/;
+                    //Get the file object
+                    var fileTobeRead = fileSelected.files[0];
+                    //Check of the extension match
+                    if (fileTobeRead.type.match(fileExtension)) {
+                        //Initialize the FileReader object to read the 2file
+                        var fileReader = new FileReader();
+                        fileReader.onload = function (e) {
+                            var fileContents = document.getElementById('filecontents');
+                            fileContents.innerText = fileReader.result;
+                        }
+                        fileReader.readAsText(fileTobeRead);
+                    }
+                    else {
+                        alert("Por favor selecione arquivo texto");
+                    }
+
+                }, false);
+            }
+            else {
+                alert("Arquivo(s) não suportado(s)");
+            }
+        }
+
+    </script>
+</body>
+</html>
