@@ -8,59 +8,96 @@
 			body{
 				background-color: #282828;
 				color: white;
-				font: normal 18pt Arial;
+				font: normal 16pt Arial;
 				margin: 0px;
 				text-align: center;
 			}
-
 			input{
-		        height: 30px;
-		        background-color: #282828;
-		        border-radius: 0px;
-		        border-width: 1px;
-		        border-top-width: 0px;
-		        border-right-width: 0px;
-		        border-left-width: 0px;
-		        font: normal 18pt Arial;
-		        color: white;
-		        margin-bottom: 10px ;
-		      }
-		    #pais: hover{
-		    	color: red;
-		    }
-		      #bt{
-		        background-color: blue;
-		        border-radius: 4px ;
-		        border-width: 0px;
-		        font: normal 18pt Arial;
-		        color: white;
-		        margin-bottom: 10px ;
-		    }
-		    div{
-		    	background-color: grey;
-		    }
-
+		height: 30px;
+		background-color: #282828;
+		border-radius: 0px;
+		border-width: 2px;
+		border-color: white;
+		border-top-width: 0px;
+		border-right-width: 0px;
+		border-left-width: 0px;
+		font: normal 18pt Arial;
+		color: white;
+		margin-bottom: 10px ;
+		}
+		#pais: hover{
+			color: red;
+		}
+		#bt{
+		background-color: white;
+		border-radius: 4px ;
+		border-width: 0px;
+		font: normal 18pt Arial;
+		color: #333;
+		margin-bottom: 10px ;
+		}
+		div#res{
+			background-color: rgba(153, 163, 164, .4);
+			color: white;
+			max-height: 80%;
+			max-width: 80%;
+			margin: auto;
+			border-radius: 7px;
+		}
+		img{
+			width: 60%;
+			height: 60%;
+		}
+		p{
+			text-align: top;
+			padding: 10px;
+		}
+		#bg{
+			filter: blur(8px);
+			-webkit-filter: blur(8px);
+		}
+		#wiki{
+			justify-content: center;
+			font-weight: normal;
+		}
+		#poema{
+			font: normal 12pt Arial;
+			justify-content: left;
+			text-align: left;
+			padding-left: 200px;
+		}
 		</style>
 	</head>
 	<body>
-		<h1>Nacionalidade</h1>
-		<input type="text" name="country" id="pais" placeholder="Digite seu pais">
-		<button id="bt" onclick="nat()">Confirmar</button>
-		<div id="res"></div>
-		<script>
-			var pais = document.getElementsByquerySelector('input#pais').value.toLowerCase
-			var res = document.getElementsByquerySelector('div#res')
-			
-			function nat(){
-				console.log('Funcionou!!!')
-				
-				// res.innerHTML = 'Funcionou!!!'
-				// if (pais == 'brasil'){
-				// 	res.innerHTML = 'Você é um Brasileiro.'
-				// } else(){
-				// 	res.innerHTML = 'Você é um estrangeiro.'
-				// }
-			}
-		</script>
+		<div id="container">
+			<h1>Nacionalidade</h1>
+			<input onmouseout="nd()" type="text" id="pais" placeholder="Digite seu pais">
+			<button id="bt" onclick="nd()">Confirmar</button>
+			<div id="res">Pode ser seu pais de origem ou o atual.</div>
+			<script>
+				function nd(){
+					var pais = document.getElementById('pais').value.toLowerCase()
+					var res = document.getElementById('res')
+					if (pais == 'terra'){
+						res.innerHTML = '<p>Você é um Terráqueo</p>'
+						res.innerHTML += '<img src="https://www.infoescola.com/wp-content/uploads/2008/04/planeta-terra_585359906-1000x562.jpg"/>'
+						res.innerHTML += '<p>A Terra é o terceiro planeta do sistema solar e o único conhecido que apresenta condições que permitem a existência de vida inteligente.</p>'
+					}
+					
+					if (pais == 'brasil'){
+					res.innerHTML = '<p>Você é Brasileiro.</p>'
+					res.innerHTML += '<img src="https://thumbs.dreamstime.com/b/brazil-flag-closeup-ruffled-41400640.jpg"/> '
+					res.innerHTML += '<p id="wiki"><strong>Brasil</strong> oficialmente República Federativa do Brasil, é o maior país da América do Sul e da região da América Latina, sendo o quinto maior do mundo em área territorial (equivalente a 47,3% do território sul-americano) e sexto em população (com mais de 210 milhões de habitantes). É o único país na América onde se fala majoritariamente a língua portuguesa e o maior país lusófono do planeta, além de ser uma das nações mais multiculturais e etnicamente diversas, em decorrência da forte imigração oriunda de variados locais do mundo.</p>'
+					
+					
+				} if (pais != 'terra' && pais != 'brasil'){
+					res.innerHTML = '<p>Você é estrangeiro.</p>'
+					res.innerHTML += '<img src="https://thumbs.dreamstime.com/b/flags-27610952.jpg"/>'
+					res.innerHTML += '<p id="poema"><em>Outrora eu era daqui, e hoje regresso estrangeiro, <br>Forasteiro do que vejo e ouço, velho de mim. <br>Já vi tudo, ainda o que nunca vi, nem o que nunca verei. <br>Eu reinei no que nunca fui.</em></p>'
+				}
+				console.log(pais)
+				}
+			</script>
+		</div>
 	</body>
 </html>
