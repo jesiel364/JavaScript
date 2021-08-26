@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM</title>
+		<style>
+			body{
+			background-color: #715CF2;
+			color: white;
+			font: normal 18pt Arial;
+		}
+			code{
+				background-color: gray;
+				border-radius: 10px;
+			}
+			#ex{
+				display: ;
+				overflow-y: scroll;
+				height: 300px;
+			}
+
+			img{
+				border-radius: 10px;
+				max-width: 50%;
+				max-height: 500px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Iniciando estudos DOM</h1>
+		<img src="arvore_dom.png">
+		<p>Aqui vai o resultado</p>
+		<p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+		<div id="msg">Clique em min</div>
+
+		<script>
+			window.document.write(`Charset: ${window.document.charset}<br>`)
+			window.document.write(`navigator: ${window.navigator.appName}<br>`)
+			window.document.write(`Title: ${window.document.title}<br>`)
+		</script>
+
+		<div id="ex">
+		<h2>Selecionando por Tag</h2>
+		<code>getElementByTagName</code>
+		<br>
+
+		<script>
+			var corpo = window.document.body
+			var p1 = document.getElementsByTagName('p')[1]
+			window.document.write('Está escrito assim: ' + p1.innerText)
+			window.document.write('<br>', p1.innerHTML)
+			// p1.style.color = 'blue'
+			// corpo.style.background = 'black'
+			// window.alert(p1.innerText)
+		</script>
+
+		<h2>Selecionando por ID</h2>
+		<code>getElementsById</code>
+
+		<script>
+			var d = window.document.getElementById('msg')
+			d.style.background = 'green'
+			
+		</script>
+
+		<h2>Selecionando por name</h2>
+		<code>getElementsByName</code>
+
+		<h2>Selecionando por class</h2>
+		<code>getElementsByClass</code>
+
+		<h2>Selecionando por seletor</h2>
+		<code>getElementsByquerySelector</code>
+
+		<script>
+			var d = window.document.querySelector('div#msg')
+			d.style.color = 'yellow'
+		</script>
+	</div>
+	</body>
+</html>
