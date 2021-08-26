@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="utf-8">
+		<title>Nacionalide</title>
+		<style type="text/css">
+			body{
+				background-color: #282828;
+				color: white;
+				font: normal 18pt Arial;
+				margin: 0px;
+				text-align: center;
+			}
+
+			input{
+		        height: 30px;
+		        background-color: #282828;
+		        border-radius: 0px;
+		        border-width: 1px;
+		        border-top-width: 0px;
+		        border-right-width: 0px;
+		        border-left-width: 0px;
+		        font: normal 18pt Arial;
+		        color: white;
+		        margin-bottom: 10px ;
+		      }
+		    #pais: hover{
+		    	color: red;
+		    }
+		      #bt{
+		        background-color: blue;
+		        border-radius: 4px ;
+		        border-width: 0px;
+		        font: normal 18pt Arial;
+		        color: white;
+		        margin-bottom: 10px ;
+		    }
+		    div{
+		    	background-color: grey;
+		    }
+
+		</style>
+	</head>
+	<body>
+		<h1>Nacionalidade</h1>
+		<input type="text" name="country" id="pais" placeholder="Digite seu pais">
+		<button id="bt" onclick="nat()">Confirmar</button>
+		<div id="res"></div>
+		<script>
+			var pais = document.getElementsByquerySelector('input#pais').value.toLowerCase
+			var res = document.getElementsByquerySelector('div#res')
+			
+			function nat(){
+				console.log('Funcionou!!!')
+				
+				// res.innerHTML = 'Funcionou!!!'
+				// if (pais == 'brasil'){
+				// 	res.innerHTML = 'Você é um Brasileiro.'
+				// } else(){
+				// 	res.innerHTML = 'Você é um estrangeiro.'
+				// }
+			}
+		</script>
+	</body>
+</html>
