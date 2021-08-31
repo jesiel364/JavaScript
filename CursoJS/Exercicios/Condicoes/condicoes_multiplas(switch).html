@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background-color: #363636;
+			font: normal 18pt arial;
+			display: grid;
+			grid-template-columns: auto auto auto;
+		}
+
+		div{
+			
+			background-color: #282828;
+			/*background-image: url('clock.jpg');*/
+			color: white;
+			margin-left: auto;
+			margin-right: auto;
+			display: grid;
+			width: 300px;
+			height: 200px;
+			border-radius: 7px;
+			text-align: center;
+			/*line-height: 400px;*/
+			margin-bottom: 10px;
+		}
+
+		p{
+			text-align: center;
+			display: grid;
+			margin-top: 0px;
+			margin-bottom: 10px;
+			
+		}
+
+		img{
+			width: 100px;
+			height: 100px;
+			margin: auto;
+			transition: .2s;
+		}
+
+		img:hover{
+			width: 150px;
+			height: 150px;
+			margin: auto;
+			transition: 1s;
+		}
+	</style>
+	<meta charset="utf-8">
+	<title>Switch</title>
+	
+</head>
+<body>
+	<div id="hora">
+	<script>
+		var agora = new Date()
+		var hora = agora.getHours()
+		var minutos = agora.getMinutes()
+
+		var p = document.getElementById('hora')
+		
+
+		if (hora >= 8 && hora <= 12){
+			p.innerHTML += 'Tenha um bom dia!'
+			p.innerHTML += '<img src="sol.png" alt="sol"/>'
+		} else if(hora >= 13 && hora <= 18){
+			p.innerHTML += 'Tenha uma boa tarde!'
+		} else{
+			p.innerHTML += 'Tenha uma boa noite!'
+			p.innerHTML += '<img src="lua.png" alt="lua"/>'
+		}
+	</script>
+	<!-- <p>Tenha uma boa noite!</p> -->
+
+</div>
+<div id="semana">
+	<script type="text/javascript">
+		var agora = new Date()
+		var diaSem = agora.getDay()
+		var p = document.getElementById('semana')
+		switch (diaSem) {
+			case 0:
+				var dia_da_semana = 'Domingo'
+				break;
+
+			case 1:
+				var dia_da_semana = 'Segunda'
+				break;
+			
+			case 2:
+				var dia_da_semana = 'Terça'
+				break;
+			
+			case 3:
+				var dia_da_semana = 'Quarta'
+				break;
+
+			case 4:
+				var dia_da_semana = 'Quinta'
+				break;
+			
+			case 5:
+				var dia_da_semana = 'Sexta'
+				break;
+
+			case 6:
+				var dia_da_semana = 'Sábado'
+				break;
+
+			default:
+				var dia_da_semana = '[Erros] Valor indefinido.'
+				break;
+		}
+
+		p.innerHTML = `Hoje é ${dia_da_semana}`
+
+
+	</script>
+</div>
+
+<div id="data">
+	<script type="text/javascript">
+		var agora = new Date()
+		var dia = agora.getDate()
+		var mes = agora.getMonth()
+		var ano = agora.getFullYear()
+		var p = document.getElementById('data')
+
+		switch (mes) {
+			case 0:
+				var mes = 'Janeiro'
+				break;
+			case 1:
+				var mes = 'Fevereiro'
+				break;
+			case 2:
+				var mes = 'Março'
+				break;
+			case 3:
+				var mes = 'Abril'
+				break;
+			case 4:
+				var mes = 'Maio'
+				break;
+			case 5:
+				var mes = 'Junho'
+				break;
+			case 6:
+				var mes = 'Julho'
+				break;
+			case 7:
+				var mes = 'Agosto'
+				break;
+			case 8:
+				var mes = 'Setembro'
+				break;
+			case 9:
+				var mes = 'Outubro'
+				break;
+			case 10:
+				var mes = 'Novembro'
+				break;
+			case 0:
+				var mes = 'Dezembro'
+				break;
+			default:
+				var mes = '[Erro] Valor informado desconhecido.'
+				break;
+		}
+
+		p.innerHTML = `Dia ${dia} de ${mes} de ${ano}`
+		p.innerHTML += '<img src="calendar.png" alt="calendar"/>'
+
+	</script>
+</div>
+
+<div id='relogio'>
+	<p id="clock"></p>
+	<!-- <img src="clock.jpg" alt="clock"/> -->
+	<script type="text/javascript">
+		function time(){
+			var agora = new Date()
+			var hora = agora.getHours()
+			var min = agora.getMinutes()
+			var s = agora.getSeconds()
+			var clock = document.getElementById('clock')
+			
+			if (hora >= 0 && hora <= 9){
+				clock.textContent = `0${hora}:${min}:${s}`
+				if (s >= 0 && s <= 9){
+					clock.textContent = `0${hora}:${min}:0${s}`}
+			}else {clock.textContent = `${hora}:${min}:0${s}`}
+		}
+
+		setInterval(time, 1000)
+
+		time()
+
+	</script>
+</div>
+
+</body>
+</html>
